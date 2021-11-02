@@ -5,6 +5,7 @@ import festmeny_hozzaadas
 import festmenyek_class
 import fajl_kiiras
 import nevkereso_class
+import statisztika
 
 rekordok = []
 
@@ -32,7 +33,7 @@ def main():
                 print("eeee")
                 break
             elif answer == 'f':
-                print("ffff")
+                statisztika.Statisztika(rekordok)
                 break
             elif answer == 'exit':
                 quit()
