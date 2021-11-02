@@ -26,7 +26,7 @@ def main():
                 festmeny_hozzaadas.FestményHozzáadás()
                 break
             elif answer == 'd':
-                nevkereso_class.Search_name(rekordok):
+                nevkereso_class.Search_name(rekordok)
                 break
             elif answer == 'e':
                 print("eeee")
