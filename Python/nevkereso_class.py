@@ -1,51 +1,49 @@
+import fajlbeolvasas
 
+class Search_name:
+	
+	def __init__ (self):
+		
+		if 0 == len(Search_name.proba):
+			self.txt = "\tNincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
+			print(self.txt)
+			self.txt = "\tKérlek nyomj ENTER-t  a vissza lépéshez!"
+			input(self.txt)
+			return fomenu
+		
+		self.txt = "\n\tÜdvözöllek a Névkeresőben!\n"
+		print(self.txt)
+		
+		self.ciklus_n = True
+		self.i = 0
+		self.b = 0
+		
+		Search_name.ciklus(self)
+		
+	def question(self):
+		print("OK")
+		return Search_name.ciklus(self)
+		
+	def ciklus(self):
+	
+		self.txt = "\t A keresett festmény: "
+		self.name = str(input(self.txt))
+		
+		while self.ciklus_n == True:
+			self.i += 1
+			
+			for x in range (len(Search_name.proba)):
+				if self.name == Search_name.proba[x]:
+					self.txt = "\t   <lista ára és stílusa> \n"
+					print(self.txt)
+					return Search_name.question(self)
+				else:
+					self.b += 1
 
-class InputFile:
-    def __init__(self, file, lista):
-        f = open(file, "r", encoding='utf-8')
-        for sor in f:
-            sor = sor[:-1].split(";")
-            lista.append([str(sor[0]), int(sor[1]), str(sor[2])])
-        f.close()
-        return
-        
-class Search_cmd:
-    '''Fő osztály'''
-    festmeny_now = []   #most üres de később ez lesz a pillanatnyi!!
-    festmeny_all = []   #összes eddigi festmeny.txt
-    # proba= ["fás"]
-    
-    #Search_cmd.inputFile("festmeny_v.txt", festmeny_all)
-    
-    def __init__(self, label):
-        print(label)
-        
-        '''Egy kicsi menü, amiben választani lehet majd egy pár opció közül'''
-        # proba = self.festmeny_all[0]
-        # print(self.proba)
-        self.m_1 = "\n\t1.)\tNév keresése a kiválasztot listából"
-        print(self.m_1)
-        self.m_2 = "\t2.)\tNév keresése az összes listából\t"
-        print(self.m_2)
-        txt = "\n\tKérlek válasz az opciók közül: "
-        self.a = int(input(txt))
-        
-        # Ha függvény a választás megvalósításához
-        
-        if self.a == 1:
-            for i in range(len(self.festmeny_all)):
-                txt = self.festmeny_all[i][0]
-                print(txt)
-                
-        elif self.a == 2:
-            txt = "Sikeres keresés"
-            print(txt)
-            
-        
-# A modul inulásának parancsai
-InputFile("festmeny_v.txt", Search_cmd.festmeny_all)
-InputFile("festmeny_m.txt", Search_cmd.festmeny_all)
-#InputFile("festmeny_t.txt", Search_cmd.festmeny_all)
-Search_cmd("\nÜdvözöllek a Névkeresőben!")
-# A modul teszteléséhez szükséges
+			if self.b > 0:
+				self.txt = "nincs ilyen a listában!"
+				print(self.txt)
+				return Search_name.question(self)
+
+Search_name()
 input("<<Enter>>")
