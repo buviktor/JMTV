@@ -1,12 +1,10 @@
-import fajlbeolvasas
 import festmenyek_class
 
 class Search_name:
 	
     def __init__ (self, lista):
     
-        self.lista = lista
-        if 0 == len(self.lista):
+        if 0 == len(lista):
             self.txt = "\tNincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
             print(self.txt)
             self.txt = "\tKérlek nyomj ENTER-t  a vissza lépéshez!"
@@ -16,33 +14,33 @@ class Search_name:
         self.txt = "\n\tÜdvözöllek a Névkeresőben!\n"
         print(self.txt)
 		
-        self.ciklus_n = True
-        self.i = 0
         self.b = 0
 		
-        Search_name.ciklus(self)
+        Search_name.ciklus(self, lista)
+        
+    def question(self, lista):
+        self.txt = "Szeretne újból keresni? (y/n)\n>"
+        answer = input(self.txt)
+        
+        if answer == 'y':
+            Search_name.ciklus(self, lista)
+        else:
+            return
 		
-    def question(self):
-        Search_name.ciklus(self)
-		
-    def ciklus(self):
-	
+    def ciklus(self, lista):
+        
         self.txt = "\t A keresett festmény: "
         self.name = str(input(self.txt))
-		
-        # while self.ciklus_n == True:
-            # self.i += 1
 			
-        for x in range (len(self.lista)):
-            if self.name == self.lista[x]:
-                self.txt = festmenyek_class.toString()
-                print(self.txt)
-                Search_name.question(self)
-                # else:
-                    # self.b += 1
+        for i in range (len(lista)):
+            if self.name == lista[i].cim:
+                print(lista[i].toString())
+                Search_name.question(self, lista)
+            else:
+                self.b += 1
 
-            # if self.b > 0:
-                # self.txt = "nincs ilyen a listában!"
-                # print(self.txt)
-                # return Search_name.question(self)
+            if self.b > 0:
+                self.txt = "Ilyen festmény nem létezik!"
+                print(self.txt)
+                Search_name.question(self, lista)
 
