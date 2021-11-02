@@ -1,4 +1,5 @@
 import fajlbeolvasas
+import festmenyek_class
 
 class Search_name:
 	
@@ -22,27 +23,26 @@ class Search_name:
         Search_name.ciklus(self)
 		
     def question(self):
-        print("OK")
-        return Search_name.ciklus(self)
+        Search_name.ciklus(self)
 		
-    def ciklus(self, lista):
+    def ciklus(self):
 	
         self.txt = "\t A keresett festmény: "
         self.name = str(input(self.txt))
 		
-        while self.ciklus_n == True:
-            self.i += 1
+        # while self.ciklus_n == True:
+            # self.i += 1
 			
-            for x in range (len(self.lista)):
-                if self.name == self.lista[x]:
-                    self.txt = "\t   <lista ára és stílusa> \n"
-                    print(self.txt)
-                    return Search_name.question(self)
-                else:
-                    self.b += 1
-
-            if self.b > 0:
-                self.txt = "nincs ilyen a listában!"
+        for x in range (len(self.lista)):
+            if self.name == self.lista[x]:
+                self.txt = festmenyek_class.toString()
                 print(self.txt)
-                return Search_name.question(self)
+                Search_name.question(self)
+                # else:
+                    # self.b += 1
+
+            # if self.b > 0:
+                # self.txt = "nincs ilyen a listában!"
+                # print(self.txt)
+                # return Search_name.question(self)
 
