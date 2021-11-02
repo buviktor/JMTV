@@ -8,7 +8,7 @@ class Kiiras:
         for i in range(len(lista)):
               print(lista[i].toString())
 
-        print("\tA főmenübe való visszalépéshez kérem nyomja meg az Entert")
+        print("\tA főmenübe való visszalépéshez kérem nyomja meg az entert")
         input("<<Enter>>")
         return
 
