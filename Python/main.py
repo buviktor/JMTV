@@ -4,6 +4,7 @@ import fajlbeolvasas
 import festmeny_hozzaadas
 import festmenyek_class
 import fajl_kiiras
+import nevkereso_class
 
 rekordok = []
 
@@ -25,7 +26,7 @@ def main():
                 festmeny_hozzaadas.FestményHozzáadás()
                 break
             elif answer == 'd':
-                print("dddd")
+                nevkereso_class.Search_name(rekordok):
                 break
             elif answer == 'e':
                 print("eeee")
