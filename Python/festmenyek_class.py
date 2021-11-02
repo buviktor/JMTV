@@ -10,7 +10,7 @@ class Festmenyek:
         return txt
 
     def toFile(self):
-        txt = self.cim + ";" + self.ertek + ";" + self.stilus + "\n"
+        txt = self.cim + ";" +str(self.ertek) + ";" + self.stilus + "\n"
         return txt
 
 
