@@ -2,14 +2,15 @@ import fajlbeolvasas
 
 class Search_name:
 	
-	def __init__ (self):
+	def __init__ (self, lista):
 		
-		if 0 == len(Search_name.proba):
+        self.lista = lista
+		if 0 == len(self.lista):
 			self.txt = "\tNincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
 			print(self.txt)
 			self.txt = "\tKérlek nyomj ENTER-t  a vissza lépéshez!"
 			input(self.txt)
-			return fomenu
+			return 
 		
 		self.txt = "\n\tÜdvözöllek a Névkeresőben!\n"
 		print(self.txt)
@@ -24,7 +25,7 @@ class Search_name:
 		print("OK")
 		return Search_name.ciklus(self)
 		
-	def ciklus(self):
+	def ciklus(self, lista):
 	
 		self.txt = "\t A keresett festmény: "
 		self.name = str(input(self.txt))
@@ -32,8 +33,8 @@ class Search_name:
 		while self.ciklus_n == True:
 			self.i += 1
 			
-			for x in range (len(Search_name.proba)):
-				if self.name == Search_name.proba[x]:
+			for x in range (len(self.lista)):
+				if self.name == self.lista[x]:
 					self.txt = "\t   <lista ára és stílusa> \n"
 					print(self.txt)
 					return Search_name.question(self)
@@ -45,5 +46,3 @@ class Search_name:
 				print(self.txt)
 				return Search_name.question(self)
 
-Search_name()
-input("<<Enter>>")
