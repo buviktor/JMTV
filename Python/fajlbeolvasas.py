@@ -6,7 +6,7 @@ class Beolvasas:
         self.lista = lista
         self.fajl = input("Kérem a fájl nevét: ")
         if self.fajl[-4:] != ".txt":
-                self.fajl = fajl + ".txt"
+                self.fajl = self.fajl + ".txt"
         self.inputFile()
         print("\tA fájl beolvasása ... kész!")
         input("<< Enter >>")
