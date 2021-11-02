@@ -17,7 +17,7 @@ class FestményHozzáadás:
             while answer != 'n':
                 prompt = "Kérem adja meg a festmény címét: "
                 cim = input(prompt)
-                prompt = "Kérek adja meg a festmény értékét: "
+                prompt = "Kérem adja meg a festmény értékét: "
                 ertek = int(input(prompt))
                 prompt = "Kérem adja meg a festmény stílusát: "
                 stilus = input(prompt)
