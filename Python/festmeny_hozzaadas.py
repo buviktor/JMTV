@@ -32,7 +32,7 @@ class FestményHozzáadás:
             #Felvitt adatok kilistázása
             print("Ön az alábbi adatokat töltötte fel:")
             for i in range(len(uj_rekordok)):
-                print("\t", uj_rekordok[i].toString())
+                print(uj_rekordok[i].toString())
 
             #Mentés és kilépés
             prompt = "\n\nKérem adja meg melyik fájlba szeretné menteni a most feltöltött festményeit:\n>"
@@ -41,7 +41,7 @@ class FestményHozzáadás:
                 fajl = fajl + ".txt"
             f = open(fajl, "a", encoding='utf-8')
             for i in range(len(uj_rekordok)):
-                f.write(uj_rekordok[i].cim + ";" + str(uj_rekordok[i].ertek) + ";" + uj_rekordok[i].stilus + "\n")
+                f.write(uj_rekordok[i].toFile())
             f.close()
 
             print("\nA mentés sikeresen megtörtént!\n\n"
