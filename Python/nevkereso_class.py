@@ -1,4 +1,5 @@
 import festmenyek_class
+import main
 
 class Search_name:
 	
@@ -25,7 +26,7 @@ class Search_name:
         if answer == 'y':
             Search_name.ciklus(self, lista)
         else:
-            return
+            main.main()
 		
     def ciklus(self, lista):
         
@@ -42,5 +43,6 @@ class Search_name:
         if self.b > 0:
             self.txt = "Ilyen festmény nem létezik!"
             print(self.txt)
+            self.b = 0
             Search_name.question(self, lista)
 
