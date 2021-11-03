@@ -1,10 +1,9 @@
 import festmenyek_class
-import main
 
 class Search_name:
 	
     def __init__ (self, lista):
-    
+            
         if 0 == len(lista):
             self.txt = "\tNincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
             print(self.txt)
@@ -18,15 +17,18 @@ class Search_name:
         self.b = 0
 		
         Search_name.ciklus(self, lista)
+        Search_name.question(self, lista)
+        return
         
     def question(self, lista):
         self.txt = "Szeretne újból keresni? (y/n)\n>"
-        answer = input(self.txt)
+        self.answer = input(self.txt)
         
-        if answer == 'y':
+        if self.answer == 'y':
             Search_name.ciklus(self, lista)
         else:
-            main.main()
+            return
+        
 		
     def ciklus(self, lista):
         
@@ -38,11 +40,9 @@ class Search_name:
                 print(lista[i].toString())
                 Search_name.question(self, lista)
             else:
-                self.b += 1
-
-        if self.b > 0:
-            self.txt = "Ilyen festmény nem létezik!"
-            print(self.txt)
-            self.b = 0
-            Search_name.question(self, lista)
+                self.hibas = "Ilyen festmény nem létezik!"
+                print(self.hibas)
+                # self.b = 0
+                # Search_name.question(self, lista)
+                return
 
