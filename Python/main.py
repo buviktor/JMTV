@@ -11,7 +11,11 @@ rekordok = []
 
 def main():
     udvozles_kiiro.Udvozles()
+    
     answer = ""
+    volt_betoltes = False
+    hiba_uzenet = 30*"-" + "\n**Nincs feltöltött fájl még!**\n" + 30*"-"
+
     while 1:
         menu_kiiro.Fomenu()
         prompt = ">"
@@ -19,22 +23,36 @@ def main():
             answer = input(prompt)
             if answer == 'a':
                 fajlbeolvasas.Beolvasas(rekordok)
+                volt_betoltes = True
                 break
             elif answer == 'b':
-                fajl_kiiras.Kiiras(rekordok)
-                break
+                if volt_betoltes == True:
+                    fajl_kiiras.Kiiras(rekordok)
+                    break
+                else:
+                    print(hiba_uzenet)
             elif answer == 'c':
-                festmeny_hozzaadas.FestményHozzáadás()
-                break
+                if volt_betoltes == True:
+                    festmeny_hozzaadas.FestményHozzáadás()
+                    break
+                else:
+                    print(hiba_uzenet)
             elif answer == 'd':
-                nevkereso_class.Search_name(rekordok)
-                break
-            elif answer == 'e':
-                print("eeee")
-                break
+                if volt_betoltes == True:
+                    nevkereso_class.Search_name(rekordok)
+                    break
+                else:
+                    print(hiba_uzenet)
+            #elif answer == 'e':
+                #if volt_betoltes == True:
+                #else:
+                    #print(hiba_uzenet)
             elif answer == 'f':
-                statisztika_class.Statisztika(rekordok)
-                break
+                if volt_betoltes == True:
+                    statisztika_class.Statisztika(rekordok)
+                    break
+                else:
+                    print(hiba_uzenet)
             elif answer == 'exit':
                 quit()
             answer = ""
