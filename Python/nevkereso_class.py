@@ -39,8 +39,8 @@ class Search_name:
             else:
                 self.b += 1
 
-            if self.b > 0:
-                self.txt = "Ilyen festmény nem létezik!"
-                print(self.txt)
-                Search_name.question(self, lista)
+        if self.b > 0:
+            self.txt = "Ilyen festmény nem létezik!"
+            print(self.txt)
+            Search_name.question(self, lista)
 
