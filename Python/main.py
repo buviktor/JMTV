@@ -6,6 +6,7 @@ import festmenyek_class
 import fajl_kiiras
 import nevkereso_class
 import statisztika_class
+#import stiluskereso_class
 
 rekordok = []
 
@@ -45,6 +46,8 @@ def main():
                     print(hiba_uzenet)
             #elif answer == 'e':
                 #if volt_betoltes == True:
+                    #stiluskereso_class.Search_stilus(rekordok)
+                    #break
                 #else:
                     #print(hiba_uzenet)
             elif answer == 'f':
