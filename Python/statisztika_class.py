@@ -19,13 +19,9 @@ class Statisztika:
             if min(ertekek) == self.lista[i].ertek:
                 print(self.lista[i].toString())
 
-        print("\nA festmények átlagértéke:", str(sum(ertekek)/len(ertekek)), "Ft"
+        print("\nA festmények átlagértéke:", str(sum(ertekek)/len(ertekek)), "Ft")
         print("A főmenübe való visszalépéshez kérem nyomja meg az enter")
         input("<<Enter>>")
         return
-
-
-
-
 
 
