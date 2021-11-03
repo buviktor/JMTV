@@ -5,7 +5,7 @@ class Statisztika:
         self.lista = lista
         ertekek = []
 
-        print("Statisztika a feltöltött festményekről:\n")
+        print(40*"-" + "\nStatisztika a feltöltött festményekről:\n")
         for i in range(len(lista)):
             ertekek.append(lista[i].ertek)
 
@@ -19,7 +19,7 @@ class Statisztika:
             if min(ertekek) == self.lista[i].ertek:
                 print(self.lista[i].toString())
 
-        print("\nA festmények átlagértéke:", str(sum(ertekek)/len(ertekek)), "Ft")
+        print("\nA festmények átlagértéke:", str(sum(ertekek)/len(ertekek)), "Ft\n" + 40*"-")
         print("A főmenübe való visszalépéshez kérem nyomja meg az enter")
         input("<<Enter>>")
         return
