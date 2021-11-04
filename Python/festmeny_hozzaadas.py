@@ -1,4 +1,5 @@
 import festmenyek_class
+#import lista_frissites
 
 uj_rekordok = []
 
@@ -30,11 +31,11 @@ class FestményHozzáadás:
                 answer = input(prompt)
 
             #Felvitt adatok kilistázása
-            print("Ön az alábbi adatokat töltötte fel:")
+            print("Ön az alábbi adatokat töltötte fel:\n\t" + 30*"-")
             for i in range(len(uj_rekordok)):
                 print(uj_rekordok[i].toString())
 
-            #Mentés és kilépés
+            #Mentés
             prompt = "\n\nKérem adja meg melyik fájlba szeretné menteni a most feltöltött festményeit:\n>"
             fajl = input(prompt)
             if fajl[-4:] != ".txt":
@@ -44,7 +45,12 @@ class FestményHozzáadás:
                 f.write(uj_rekordok[i].toFile())
             f.close()
 
-            print("\nA mentés sikeresen megtörtént!\n\n"
+            #Lista frissítése
+            #lista_frissites.Frissítés(fajl)
+
+            #Kilépés és üzenet
+            print("\nA mentés sikeresen megtörtént!"
+                  "A program belső adatbázisa frissült!\n\n"
                   "A főmenübe való visszatéréshez kérem nyomja meg az entert!")
             input("<< Enter >>")
             return

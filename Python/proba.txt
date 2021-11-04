@@ -2,3 +2,6 @@ p1;12;pwe
 p2;23;pk
 p3;34;ple
 p23ert;123456;ert
+www;123;qqq
+Rendes próba 1;120000;futurizmus
+Rendes próba 2;450000;futurizmus
