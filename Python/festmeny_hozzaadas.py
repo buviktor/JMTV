@@ -46,7 +46,7 @@ class FestményHozzáadás:
             f.close()
 
             #Lista frissítése
-            #lista_frissites.Frissítés(fajl)
+            #lista_frissites.Frissítés(fajl, rekordok)
 
             #Kilépés és üzenet
             print("\nA mentés sikeresen megtörtént!"
