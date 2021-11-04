@@ -5,44 +5,49 @@ class Search_name:
     def __init__ (self, lista):
             
         if 0 == len(lista):
-            self.txt = "\tNincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
+            self.txt = "Nincs betöltött fájl! Kérlek válassz egy fájlt a Főmenüben."
             print(self.txt)
-            self.txt = "\tKérlek nyomj ENTER-t  a vissza lépéshez!"
+            self.txt = "Kérlek nyomj ENTER-t  a vissza lépéshez!"
             input(self.txt)
             return 
            
-        self.txt = "\n\tÜdvözöllek a Névkeresőben!\n"
+        self.txt = "\nÜdvözöllek a Névkeresőben!"
         print(self.txt)
 		
-        self.b = 0
+        self.a = 0
+        self.answer = 'y'
 		
-        Search_name.ciklus(self, lista)
-        Search_name.question(self, lista)
+        while self.answer != 'n':
+            Search_name.ciklus(self, lista)
+            Search_name.question(self, lista)
+            
         return
         
     def question(self, lista):
-        self.txt = "Szeretne újból keresni? (y/n)\n>"
-        self.answer = input(self.txt)
+    
+        self.txt = "\nSzeretne újból keresni? (y/n)\n>"
+        self.answer = input(self.txt).lower()
         
-        if self.answer == 'y':
-            Search_name.ciklus(self, lista)
-        else:
-            return
+        return
         
 		
     def ciklus(self, lista):
         
-        self.txt = "\t A keresett festmény: "
-        self.name = str(input(self.txt))
+        self.txt = "\nA keresett festmény: "
+        name = input(self.txt)
 			
         for i in range (len(lista)):
-            if self.name == lista[i].cim:
-                print(lista[i].toString())
-                Search_name.question(self, lista)
-            else:
-                self.hibas = "Ilyen festmény nem létezik!"
-                print(self.hibas)
-                # self.b = 0
-                # Search_name.question(self, lista)
+        
+            if name.lower() == lista[i].cim.lower():
+                print("\n\t" + 30*"-" + "\n" + lista[i].toString())
                 return
+            else:
+                self.a += 1
+                
+        if self.a > 0:
+            self.txt = "\nNincs ilyen nevű festmény!"
+            print(self.txt)
+            self.a = 0
+            
+        return
 
