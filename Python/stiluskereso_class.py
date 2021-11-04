@@ -1,6 +1,6 @@
 import festmenyek_class
 
-class Search_name:
+class Search_style:
 	
     def __init__ (self, lista):
             
@@ -11,15 +11,15 @@ class Search_name:
             input(txt)
             return 
            
-        txt = "\nÜdvözöllek a Névkeresőben!"
+        txt = "\nÜdvözöllek a Stíluskeresőben!"
         print(txt)
 		
         self.a = 0
         self.answer = 'y'
 		
         while self.answer != 'n':
-            Search_name.function(self, lista)
-            Search_name.question(self, lista)
+            Search_style.function(self, lista)
+            Search_style.question(self, lista)
             
         return
         
@@ -33,19 +33,19 @@ class Search_name:
 		
     def function(self, lista):
         
-        txt = "\nA keresett festmény: "
+        txt = "\nA keresett stílus: "
         name = input(txt)
 			
         for i in range (len(lista)):
         
-            if name.lower() == lista[i].cim.lower():
+            if name.lower() == lista[i].stilus.lower():
                 print("\n\t" + 30*"-" + "\n" + lista[i].toString())
                 return
             else:
                 self.a += 1
                 
         if self.a > 0:
-            txt = "\nNincs ilyen nevű festmény!"
+            txt = "\nNincs ilyen stílusu festmény!"
             print(txt)
             self.a = 0
             
