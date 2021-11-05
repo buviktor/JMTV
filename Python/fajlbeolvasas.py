@@ -1,16 +1,43 @@
 import festmenyek_class
+import os
+
+fajlok = []
 
 class Beolvasas:
 
     def __init__(self, lista):
         fajl = input("Kérem a fájl nevét: ")
-        if fajl[-4:] != ".txt":
-                fajl = fajl + ".txt"
-        self.inputFile(fajl, lista)
-        print("\tA fájl beolvasása ... kész!")
-        input("<< Enter >>")
-        return
         
+        while 1:
+        
+            if fajl[-4:] != ".txt":
+                    fajl = fajl + ".txt"
+            
+            files = os.listdir(path='.')
+            for e in files:
+                parts = e.split('.')
+                fname = parts[0]
+                ext = parts[-1]
+                if ext == 'txt':
+                    fajlok.append(fname + '.' + ext)
+                    
+            for delete in range (len(fajlok)):
+                if fajlok[delete] == 'Readme.txt':
+                    del fajlok[delete]
+            for d in range (len(fajlok)):
+                if fajl == fajlok[d]:
+                    fajlok.clear()
+                    
+                    self.inputFile(fajl, lista)
+                    print("\tA fájl beolvasása ... kész!")
+                    input("<< Enter >>")
+                    return
+            
+            print("\nNincs ilyen nevű festmény!\nKérlek válasz az alábbi fájlok közül:\n")
+            for i in range (len(fajlok)):
+                print("\t" + fajlok[i])
+            fajlok.clear()
+            fajl = input("\nKérem a fájl nevét: ")
     
 
     def inputFile(self, fajl, lista):
