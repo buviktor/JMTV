@@ -40,14 +40,13 @@ class Search_style:
         
             if name.lower() == lista[i].stilus.lower():
                 print("\n\t" + 30*"-" + "\n" + lista[i].toString())
-                return
-            else:
                 self.a += 1
                 
-        if self.a > 0:
+        if self.a == 0:
             txt = "\nNincs ilyen stílusu festmény!"
             print(txt)
             self.a = 0
-            
+           
+        self.a = 0
         return
 
