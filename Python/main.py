@@ -36,7 +36,7 @@ def main():
                 
         elif answer == 'c':
             if volt_betoltes == True:
-                festmeny_hozzaadas.FestményHozzáadás()
+                festmeny_hozzaadas.FestményHozzáadás(rekordok)
                 continue
             else:
                 print(hiba_uzenet)

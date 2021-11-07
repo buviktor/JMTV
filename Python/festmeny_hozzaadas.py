@@ -1,10 +1,10 @@
 import festmenyek_class
-#import lista_frissites
+import lista_frissites
 
 uj_rekordok = []
 
 class FestményHozzáadás:
-    def __init__(self):
+    def __init__(self, lista):
         prompt = "Szeretne festményt feltölteni? (y/n)\n>"
         answer = input(prompt)
         if answer != 'y':
@@ -46,7 +46,7 @@ class FestményHozzáadás:
             f.close()
 
             #Lista frissítése
-            #lista_frissites.Frissítés(fajl, rekordok)
+            lista_frissites.Frissítés(fajl, lista)
 
             #Kilépés és üzenet
             print("\nA mentés sikeresen megtörtént!"
