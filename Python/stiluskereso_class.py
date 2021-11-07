@@ -20,7 +20,9 @@ class Search_style:
         while self.answer != 'n':
             Search_style.function(self, lista)
             Search_style.question(self, lista)
-            
+
+        print("A főmenübe való visszalépéshez kérem nyomja meg az enter")
+        input("<<Enter>>")
         return
         
     def question(self, lista):

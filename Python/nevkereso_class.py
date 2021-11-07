@@ -21,6 +21,8 @@ class Search_name:
             Search_name.function(self, lista)
             Search_name.question(self, lista)
             
+        print("A főmenübe való visszalépéshez kérem nyomja meg az enter")
+        input("<<Enter>>")
         return
         
     def question(self, lista):
