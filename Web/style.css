@@ -1,3 +1,121 @@
 body {
     background-image: url(Pictures/bg_img.jpg);
+    background-attachment: fixed;
+    color: antiquewhite;
+    font-family: Calisto, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    margin: auto;
+    max-width: 1200px;
 }
+
+nav {
+    padding: 20px 120px 20px 100px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-image: url(Pictures/bg_img.jpg);
+    position: fixed;
+    top: 0;
+
+}
+
+nav ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    padding: 10px;
+    margin: 0 0 1px 0;
+}
+
+nav a {
+    font-weight: bold;
+    color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: firebrick;
+}
+
+nav a.aktiv {
+    color: firebrick;
+}
+
+main {
+    margin: 80px auto;
+}
+
+div {
+    max-width: 1200px;
+}
+
+div p {
+    margin-left: 20px;
+}
+
+.img {
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 0;
+    border: solid 1px #930;
+    padding: 2px;
+}
+
+h1 {
+    text-align: center;
+    color: firebrick;
+}
+
+h2 {
+    text-decoration: underline;
+    color: firebrick;
+}
+
+.b {
+    margin-left: 40px;
+}
+
+footer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+footer ul {
+    padding: 20px 5% 0 5%;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+footer li {
+    display: inline-block;
+}
+
+.r {
+    float: right;
+    padding: 30px 0 0 0;
+}
+
+.link {
+    text-decoration: underline;
+    color: firebrick;
+    float: left;
+    padding-top: 15px;
+    padding-right: 30px;
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+  }
+  
+main ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: red; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.5em; /* Also needed for space (tweak if needed) */
+  }
